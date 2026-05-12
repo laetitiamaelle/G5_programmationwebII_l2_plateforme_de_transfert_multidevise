@@ -1,0 +1,57 @@
+/* ============================================================
+   AuthLayout.module.css — Mise en page commune aux pages auth
+   ============================================================ */
+
+/* Fond plein écran avec la navbar en haut */
+.authPage {
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--navbar-height); /* Décale le contenu sous la navbar fixe */
+}
+
+/* Zone centrale du contenu */
+.authMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-10) var(--spacing-4);
+}
+
+/* Pied de page */
+.footer {
+  background-color: var(--color-bg-navbar);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-5) var(--spacing-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+/* Texte copyright à gauche */
+.footerCopyright {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* Liens à droite du footer */
+.footerLinks {
+  display: flex;
+  gap: var(--spacing-6);
+}
+
+.footerLink {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.footerLink:hover {
+  color: var(--color-text-secondary);
+}

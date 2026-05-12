@@ -1,0 +1,119 @@
+/* ============================================================
+   InputField.module.css — Styles du composant champ de saisie
+   ============================================================ */
+
+/* Conteneur global du champ (label + input + message d'erreur) */
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  width: 100%;
+}
+
+/* Ligne au-dessus de l'input : label à gauche, lien optionnel à droite */
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Label du champ */
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* Lien optionnel (ex: "Mot de passe oublié ?") */
+.labelLink {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-accent);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.labelLink:hover {
+  color: var(--color-accent-light);
+  text-decoration: underline;
+}
+
+/* Contenant de l'input + icône préfixe */
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Icône à gauche de l'input */
+.inputIcon {
+  position: absolute;
+  left: var(--spacing-4);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  pointer-events: none;  /* L'icône ne doit pas intercepter les clics */
+  transition: color var(--transition-fast);
+}
+
+.inputIcon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Le champ input lui-même */
+.input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  padding-left: 2.75rem;   /* Espace pour l'icône à gauche */
+  background-color: var(--color-bg-input);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+/* Placeholder du champ */
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* État focus */
+.input:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.12);
+  background-color: #2a2d40;
+}
+
+/* Quand l'input est focus, l'icône change de couleur */
+.inputContainer:focus-within .inputIcon {
+  color: var(--color-accent);
+}
+
+/* État d'erreur */
+.inputError {
+  border-color: var(--color-error) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
+}
+
+/* Input sans icône (padding normal) */
+.inputNoIcon {
+  padding-left: var(--spacing-4);
+}
+
+/* Message d'erreur sous le champ */
+.errorMessage {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}

@@ -1,0 +1,273 @@
+/* ============================================================
+   RegisterPage.module.css — Styles de la page d'inscription
+   ============================================================ */
+
+/* Mise en page deux colonnes (features à gauche, form à droite) */
+.registerLayout {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* Deux colonnes égales */
+  gap: var(--spacing-16);
+  align-items: start;
+  padding: var(--spacing-8) var(--spacing-4);
+}
+
+/* ---- Colonne gauche : présentation des fonctionnalités ---- */
+.featuresCol {
+  animation: fadeInUp 0.45s ease 0.05s both;
+}
+
+/* Grand titre accrocheur */
+.heroTitle {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);  /* Responsive */
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-5);
+}
+
+/* Mot-clé accentué dans le titre */
+.heroAccent {
+  color: var(--color-accent);
+}
+
+/* Sous-titre */
+.heroSubtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-10);
+  max-width: 420px;
+}
+
+/* Liste des fonctionnalités */
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-10);
+}
+
+/* Un élément de la liste de fonctionnalités */
+.featureItem {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: flex-start;
+}
+
+/* Icône de la fonctionnalité */
+.featureIcon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.featureIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Texte de la fonctionnalité */
+.featureContent {}
+
+.featureName {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-1);
+}
+
+.featureDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Séparateur horizontal */
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin-bottom: var(--spacing-6);
+}
+
+/* Note de bas de page (avertissement devise) */
+.note {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.noteIcon {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.noteIcon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---- Colonne droite : formulaire d'inscription ---- */
+.formCol {
+  animation: fadeInUp 0.45s ease 0.15s both;
+}
+
+/* Carte du formulaire */
+.formCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-10) var(--spacing-8);
+}
+
+/* Titre du formulaire */
+.formTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-2);
+}
+
+/* Sous-titre du formulaire */
+.formSubtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-8);
+  line-height: 1.5;
+}
+
+/* Formulaire : espacement entre les champs */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+}
+
+/* Ligne avec deux champs côte à côte (mot de passe + confirmation) */
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+/* Bloc "Devise du compte" avec badge "RECOMMANDÉ" */
+.currencyLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-2);
+}
+
+.currencyLabel {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* Badge "RECOMMANDÉ" */
+.recommendedBadge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+/* Sélecteur de devise (select) */
+.currencySelect {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  background-color: var(--color-bg-input);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  cursor: pointer;
+  appearance: none;   /* Supprime la flèche native */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239aa0b8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-4) center;
+  padding-right: var(--spacing-10);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.currencySelect:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.12);
+}
+
+/* Options du select */
+.currencySelect option {
+  background-color: var(--color-bg-card);
+  color: var(--color-text-primary);
+}
+
+/* Indication sous le select */
+.currencyHint {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-2);
+}
+
+.currencyHint svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Lien "Se connecter" en bas */
+.loginPrompt {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-2);
+}
+
+.loginLink {
+  color: var(--color-accent);
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-fast);
+}
+
+.loginLink:hover {
+  color: var(--color-accent-light);
+  text-decoration: underline;
+}
+
+/* ---- Responsive : une seule colonne sur mobile ---- */
+@media (max-width: 768px) {
+  .registerLayout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+}
