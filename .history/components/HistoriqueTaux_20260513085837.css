@@ -1,0 +1,284 @@
+.main-taux {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-taux {
+    flex: 1;
+    padding: 32px;
+    overflow: auto;
+}
+
+.header-taux {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.header-taux h1 {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+.header-taux p {
+    color: #6B7280;
+    font-size: 14px;
+}
+
+.actions-taux {
+    display: flex;
+    gap: 12px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: #111113;
+    border: 1px solid #1F1F23;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon.yellow {
+    background: rgba(250, 204, 21, 0.1);
+    color: #FACC15;
+}
+
+.card-icon.blue {
+    background: rgba(96, 165, 250, 0.1);
+    color: #60A5FA;
+}
+
+.card-icon.green {
+    background: rgba(74, 222, 128, 0.1);
+    color: #4ADE80;
+}
+
+.card-label {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.card-value {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.filters-taux {
+    background: #111113;
+    border: 1px solid #1F1F23;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 16px;
+    align-items: end;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 11px;
+    color: #6B7280;
+    margin-bottom: 8px;
+}
+
+.filter-select {
+    width: 100%;
+    background: #0A0A0B;
+    border: 1px solid #1F1F23;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #E5E5E5;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tables-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.table-box-taux {
+    background: #111113;
+    border: 1px solid #1F1F23;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table-title {
+    padding: 20px;
+    border-bottom: 1px solid #1F1F23;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.paire-badge {
+    background: #1A1A1D;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.taux-value {
+    color: #FACC15;
+    font-weight: 600;
+}
+
+.statut-succes {
+    color: #4ADE80;
+}
+
+.statut-alerte {
+    color: #FACC15;
+}
+
+.selected-row {
+    background: #1A1A1D;
+}
+
+.detail-box {
+    background: #111113;
+    border: 1px solid #1F1F23;
+    border-radius: 12px;
+}
+
+.detail-header {
+    background: #3D350A;
+    padding: 20px;
+    border-radius: 12px 12px 0 0;
+}
+
+.detail-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.detail-header h3 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.detail-id {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.detail-content {
+    padding: 20px;
+}
+
+.detail-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.detail-row svg {
+    color: #6B7280;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.detail-label {
+    display: block;
+    font-size: 12px;
+    color: #6B7280;
+    margin-bottom: 4px;
+}
+
+.detail-value {
+    font-size: 14px;
+}
+
+.detail-value-large {
+    font-size: 24px;
+    color: #FACC15;
+    font-weight: 600;
+}
+
+.audit-box {
+    background: #0A0A0B;
+    border: 1px solid #1F1F23;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.audit-title {
+    font-size: 11px;
+    color: #6B7280;
+    margin-bottom: 8px;
+}
+
+.audit-text {
+    font-size: 12px;
+    color: #9CA3AF;
+    line-height: 1.5;
+}
+
+.btn-export {
+    width: 100%;
+    background: #1A1A1D;
+    border: 1px solid #1F1F23;
+    color: #E5E5E5;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.help-box {
+    background: #0A0A0B;
+    border: 1px solid #1F1F23;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.help-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.help-text {
+    font-size: 12px;
+    color: #9CA3AF;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.help-link {
+    font-size: 12px;
+    color: #FACC15;
+}
