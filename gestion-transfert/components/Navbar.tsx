@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ hideSignIn = false }) => {
     <nav className={styles.navbar}>
       <div className={styles.navContent}>
 
-        {/* ---- Logo (cliquable → retour à l'accueil) ---- */}
+      
         <Link href="/" className={styles.logo}>
           <div className={styles.logoIcon}>
             <LogoIcon />

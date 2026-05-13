@@ -276,7 +276,7 @@ const RegisterPage: React.FC = () => {
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                placeholder="Alain.Mbarga@exemple.com"
+                placeholder="laetitiamaelle.740@gmail.com"
                 icon={<MailIcon />}
                 error={errors.email}
                 autoComplete="email"

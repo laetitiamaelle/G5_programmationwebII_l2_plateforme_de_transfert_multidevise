@@ -12,7 +12,7 @@
 import type { AppProps } from 'next/app';
 
 // ← Import du CSS global (variables de couleurs, polices, reset)
-// Sans cette ligne, rien ne sera stylisé !
+// Sans cette ligne, rien ne sera stylisé ! 
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
