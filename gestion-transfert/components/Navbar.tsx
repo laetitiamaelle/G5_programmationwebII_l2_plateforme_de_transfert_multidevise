@@ -56,17 +56,13 @@ const Navbar: React.FC<NavbarProps> = ({ hideSignIn = false }) => {
           <span className={styles.logoText}>Cashflow</span>
         </Link>
 
-        {/* ---- Actions à droite ---- */}
+        
         <div className={styles.navActions}>
           {/* Bouton Aide */}
-          <button className={styles.iconBtn} aria-label="Aide" title="Aide">
-            <HelpIcon />
-          </button>
+          
 
           {/* Bouton Notifications */}
-          <button className={styles.iconBtn} aria-label="Notifications" title="Notifications">
-            <BellIcon />
-          </button>
+          
 
           {/* Bouton "Sign In" — masqué si déjà sur la page login */}
           {!hideSignIn && (
