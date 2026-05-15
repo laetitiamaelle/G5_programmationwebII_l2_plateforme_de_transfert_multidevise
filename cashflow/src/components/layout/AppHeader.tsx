@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Avatar } from "../ui/Avatar";
 import styles from "./AppHeader.module.css";
 
@@ -23,11 +26,17 @@ function LogoMark() {
   );
 }
 
-export function AppHeader({
-  userName = "Alex Rivera",
-  userSubtitle = "Personal Account",
-  avatarSrc,
-}: AppHeaderProps) {
+export function AppHeader({ userName: userNameProp, userSubtitle: userSubtitleProp, avatarSrc }: AppHeaderProps = {}) {
+  const pathname = usePathname();
+  const base =
+    pathname.startsWith("/rates") || pathname.startsWith("/rates/")
+      ? { userName: "Marcelle Kouamé", userSubtitle: "Personal Account" }
+      : pathname.startsWith("/admin")
+        ? { userName: "Admin Principal", userSubtitle: "Personal Account" }
+        : { userName: "Alex Rivera", userSubtitle: "Personal Account" };
+  const userName = userNameProp ?? base.userName;
+  const userSubtitle = userSubtitleProp ?? base.userSubtitle;
+
   return (
     <header className={styles.header}>
       <div className={styles.brand}>

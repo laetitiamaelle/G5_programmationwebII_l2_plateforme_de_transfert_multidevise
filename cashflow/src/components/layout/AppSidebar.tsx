@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./AppSidebar.module.css";
 
 export type NavKey =
@@ -8,6 +12,16 @@ export type NavKey =
   | "rates"
   | "admin"
   | "profile";
+
+const pathByKey: Record<NavKey, string> = {
+  home: "/home",
+  transfer: "/transfer",
+  transactions: "/transactions",
+  contacts: "/contacts",
+  rates: "/rates",
+  admin: "/admin",
+  profile: "/profile",
+};
 
 type Item = { key: NavKey; label: string; icon: "home" | "transfer" | "tx" | "users" | "rates" | "admin" | "user" };
 
@@ -78,38 +92,43 @@ function NavIcon({ name }: { name: Item["icon"] }) {
   }
 }
 
-export type AppSidebarProps = {
-  active: NavKey;
-  onNavigate: (key: NavKey) => void;
-};
+function activeNavKey(pathname: string | null): NavKey {
+  if (!pathname) return "transfer";
+  if (pathname.startsWith("/transfer")) return "transfer";
+  if (pathname.startsWith("/rates")) return "rates";
+  if (pathname.startsWith("/admin")) return "admin";
+  const match = (Object.keys(pathByKey) as NavKey[]).find((k) => pathByKey[k] === pathname);
+  return match ?? "home";
+}
 
-export function AppSidebar({ active, onNavigate }: AppSidebarProps) {
+export function AppSidebar() {
+  const pathname = usePathname();
+  const active = activeNavKey(pathname);
+
   return (
     <aside className={styles.aside}>
       <nav className={styles.nav} aria-label="Navigation principale">
         <div className={styles.groupLabel}>MAIN NAVIGATION</div>
         {mainItems.map((item) => (
-          <button
+          <Link
             key={item.key}
-            type="button"
+            href={pathByKey[item.key]}
             className={[styles.item, active === item.key ? styles.active : ""].filter(Boolean).join(" ")}
-            onClick={() => onNavigate(item.key)}
           >
             <NavIcon name={item.icon} />
             {item.label}
-          </button>
+          </Link>
         ))}
         <div className={styles.groupLabel}>MANAGEMENT</div>
         {manageItems.map((item) => (
-          <button
+          <Link
             key={item.key}
-            type="button"
+            href={pathByKey[item.key]}
             className={[styles.item, active === item.key ? styles.active : ""].filter(Boolean).join(" ")}
-            onClick={() => onNavigate(item.key)}
           >
             <NavIcon name={item.icon} />
             {item.label}
-          </button>
+          </Link>
         ))}
       </nav>
       <div className={styles.footer}>
